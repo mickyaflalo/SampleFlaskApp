@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h5 class="center-align">Edit User</h5>
+        <form action="{{ url_for('edit_user', user_id=user[0]) }}" method="PUT">
+            <div class="input-field">
+                <input type="text" id="firstName" name="firstName" value="{{ user[1] }}" required>
+                <label for="firstName">First Name</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="lastName" name="lastName" value="{{ user[2] }}" required>
+                <label for="lastName">Last Name</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="username" name="username" value="{{ user[3] }}" required>
+                <label for="username">Username</label>
+            </div>
+            <div class="input-field">
+                <input type="email" id="email" name="email" value="{{ user[4] }}" required>
+                <label for="email">Email</label>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit">Update User</button>
+        </form>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
